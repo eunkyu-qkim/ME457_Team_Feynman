@@ -10,14 +10,21 @@ part of mavsimPy
         1/14/2019 - RWB
 """
 import sys
-
-sys.path.append('..')
 import numpy as np
+import matplotlib.pyplot as plt
+import scipy.linalg as linalg
 
 # load message types
 from message_types.msg_state import MsgState
 import parameters.aerosonde_parameters as MAV
 from tools.rotations import Quaternion2Euler, Quaternion2Rotation
+
+#System Parameters
+Ts = 0.01
+mass = 4.506 #g
+l = 1 #cm
+w = 1 #cm
+h = 1 #cm
 
 
 class MavDynamics:
